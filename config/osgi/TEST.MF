@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test component
+Bundle-SymbolicName: uk.ac.glasgow.psd.consortium.app.Test
+Bundle-Version: 1.0.0
+Bundle-Activator: uk.ac.glasgow.psd.consortium.app.test.Activator
+Bundle-Vendor: University of Glasgow
+Bundle-Localization: plugin
+Import-Package: org.osgi.framework;version="1.3.0"
+Export-Package: uk.ac.glasgow.psd.consortium.app.test
+  

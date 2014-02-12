@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project
+	name="se-notes.workshop.lab"
+	basedir="."
+	xmlns:ivy="antlib:org.apache.ivy.ant"
+	default="build"
+>
+	
+	
+	<path id="project.classpath">
+
+		<pathelement location="bin" />
+
+		<fileset dir="lib" />
+
+	</path>
+
+
+	<target
+		name="clean"
+		description="Deletes all intermediate files."
+	>
+		
+		<delete dir="bin" />
+	
+	</target>
+	
+	
+	<target
+		name="cleanall"
+		description="Deletes all files not included in the distribution archive."
+		depends="clean"
+	>
+		
+		<delete dir="lib" />
+	
+	</target>
+	
+	
+	<target
+		name="init"
+		description="Initalises the distribution in preparation for compilation of code and documentation."
+	>
+		
+		<mkdir dir="bin"/>
+		
+	</target>
+
+	
+	<target
+		name="resolve"
+		description="Retrieves necessary dependencies for this project."
+	>
+		
+		<ivy:retrieve />
+		
+		<unzip
+			src="lib/jbehave-core-3.9-resources-3.9.zip"
+			dest="jbehave/view"
+		>
+			<patternset>
+				<include name="**/*.*"/>
+			</patternset>
+		</unzip>
+		
+		<unzip
+			src="lib/jbehave-site-resources-3.1.1.zip"
+			dest="jbehave/view"
+		>
+			<patternset>
+				<include name="**/*.*"/>
+			</patternset>
+		</unzip>
+
+		
+	</target>
+	
+	
+	<target
+		name="compile"
+		depends="init,resolve"
+		description="Compiles all java class files."
+	>
+
+		<javac
+			srcdir="src"
+			destdir="bin"
+			debuglevel="lines,vars,source"
+			classpathref="project.classpath"
+		/>
+	
+	</target>
+	
+	
+	<target
+		name="bundles"
+		description="Builds OSGi bundles for the project."
+		depends="compile"
+	>
+		<!-- Update here when new components (jar files) are being created! -->
+		<!-- Example of component -->
+		<jar update="no" destfile="test.jar" manifest="config/osgi/TEST.MF">
+			
+			<fileset 
+				dir="bin/"
+				includes="uk/ac/glasgow/psd/consortium/app/test/*.class"
+			/>
+		
+		</jar>
+
+	</target>
+	
+	
+	<target
+		name="osgi.init"
+		description="Prepares an OSGi runtime environment with default bundles."
+		depends="resolve"
+	>
+
+		<mkdir dir="bundle" />
+		
+		<copy todir="bundle">
+			<fileset dir="lib" includes="org.apache.felix.gogo.shell-0.10.0.jar" />
+			<fileset dir="lib" includes="org.apache.felix.bundlerepository-1.6.0.jar" />
+			<fileset dir="lib" includes="org.apache.felix.gogo.command-0.12.0.jar" />
+			<fileset dir="lib" includes="org.apache.felix.gogo.runtime-0.10.0.jar" />
+		</copy>
+		
+	</target>
+
+	
+	<target
+		name="osgi.run"
+		depends="osgi.init"
+	>
+		
+		<java
+			classname="org.apache.felix.main.Main"
+			fork="yes" taskname=""
+		>
+			
+			<classpath>
+				<pathelement location="lib/org.apache.felix.main-4.2.1.jar" />
+				<pathelement location="lib/derby-10.10.1.1.jar" />
+			</classpath>
+			<jvmarg value="-Dfelix.config.properties=file:config/felix.properties" />
+			<arg value="felix-cache" />
+			
+		</java>
+		
+	</target>
+		
+	
+	<target
+		name="build"
+		depends="bundles,osgi.init"
+	/>
+	
+	
+	<target
+		name="run"
+		depends="osgi.run"
+	/>
+	
+	
+	<target
+		name="test"
+		depends="build"
+	>
+		
+
+		<junit			
+			printsummary="yes"
+		>
+			<!-- Required to be changed in near future. -->
+			<classpath refid="project.classpath"/>
+			
+			<test
+				name="uk.ac.glasgow.senotes.components.lab.repository.test.RepositoryImplBundleTest"
+			/>
+						
+			<test
+				name="uk.ac.glasgow.senotes.components.lab.repository.test.unit.TemperatureRangeTest"
+			/>
+						
+			<test
+				name="uk.ac.glasgow.senotes.components.lab.repository.test.unit.TemperatureHandlerTest"
+			/>
+			
+			<test
+				name="uk.ac.glasgow.senotes.components.lab.test.integration.AlarmTest"
+			/>
+			
+			<test
+				name="uk.ac.glasgow.senotes.components.lab.repository.test.LabStories"
+			/>
+
+			<!-- Required to be changed in near future. /END -->
+		</junit>
+
+
+		
+	
+	</target>
+	
+</project>
