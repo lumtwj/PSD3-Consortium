@@ -109,6 +109,15 @@
 		
 		</jar>
 
+		<jar update="no" destfile="login.jar" manifest="META-INF/EXTERNALDB.MF">
+			
+			<fileset
+				dir="bin/"
+				includes="psd/sprint/consortium/*.class"
+			/>
+			
+		</jar>
+
 	</target>
 	
 	
@@ -160,7 +169,7 @@
 	
 	<target
 		name="run"
-		depends="osgi.run"
+		depends="bundles,osgi.run"
 	/>
 	
 	
