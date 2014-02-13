@@ -100,11 +100,11 @@
 	>
 		<!-- Update here when new components (jar files) are being created! -->
 		<!-- Example of component -->
-		<jar update="no" destfile="test.jar" manifest="config/osgi/TEST.MF">
+		<jar update="no" destfile="Attendance.jar" manifest="META-INF/ATTENDANCE.MF">
 			
 			<fileset 
 				dir="bin/"
-				includes="uk/ac/glasgow/psd/consortium/app/test/*.class"
+				includes="consortium/psd/Attendance/*.class"
 			/>
 		
 		</jar>
