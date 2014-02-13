@@ -43,43 +43,43 @@ PSD3 Consortium Sprint 1 - Implementation
 5.	If you have no idea what is the id you have previously, type lb to check. 
 	For my component, you should see the follow result.
 
-	install file:login.jar
-		[] g! Bundle ID: 5
-	start 5
-        	 [] g! Got Connection
-        	 [] derrick derrick
-        	 [] kevin kevin
-        	 [] jason jason
-        	 [] ngaifong ngaifong
-        	 [] reuben reuben
-        	 [] joe joe
-        	 [] ian ian
-        	 [] gene gene
-        	 [] yuanhui yuanhui
-        	 [] wenbing wenbing
-        	 [] jiaxiong jiaxiong
-        	 [] yve yve
-        	 [] jasmine jasmine
-        	 [] shiny shiny
-        	 [] veronica veronica
-        	 [] Got Connection
-        	 [] derrick derrick
-        	 [] kevin kevin
-        	 [] jason jason
-        	 [] ngaifong ngaifong
-        	 [] reuben reuben
-         	 [] joe joe
-         	 [] ian ian
-        	 [] gene gene
-        	 [] yuanhui yuanhui
-        	 [] wenbing wenbing
-        	 [] jiaxiong jiaxiong
-        	 [] yve yve
-        	 [] jasmine jasmine
-        	 [] shiny shiny
-        	 [] veronica veronica
-	stop 5
-        	 [] g! Goodbye World!!
+		install file:login.jar
+			[] g! Bundle ID: 5
+		start 5
+        		 [] g! Got Connection
+        		 [] derrick derrick
+        		 [] kevin kevin
+        		 [] jason jason
+        		 [] ngaifong ngaifong
+        		 [] reuben reuben
+        		 [] joe joe
+        		 [] ian ian
+        		 [] gene gene
+        		 [] yuanhui yuanhui
+        		 [] wenbing wenbing
+        		 [] jiaxiong jiaxiong
+        		 [] yve yve
+        		 [] jasmine jasmine
+        		 [] shiny shiny
+        		 [] veronica veronica
+        		 [] Got Connection
+        		 [] derrick derrick
+        		 [] kevin kevin
+        		 [] jason jason
+        		 [] ngaifong ngaifong
+        		 [] reuben reuben
+         		 [] joe joe
+         		 [] ian ian
+        		 [] gene gene
+        		 [] yuanhui yuanhui
+        		 [] wenbing wenbing
+        		 [] jiaxiong jiaxiong
+        		 [] yve yve
+        		 [] jasmine jasmine
+        		 [] shiny shiny
+        		 [] veronica veronica
+		stop 5
+        		 [] g! Goodbye World!!
 
          
 -Derrick
