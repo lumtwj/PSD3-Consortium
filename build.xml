@@ -117,6 +117,14 @@
 			/>
 			
 		</jar>
+		<jar update="no" destfile="User.jar" manifest="META-INF/USER.MF">
+					
+					<fileset 
+						dir="bin/"
+						includes="consortium/psd/User/*.class"
+					/>
+				
+		</jar>
 
 	</target>
 	
