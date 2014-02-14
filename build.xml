@@ -108,15 +108,25 @@
 			/>
 		
 		</jar>
-
-		<jar update="no" destfile="login.jar" manifest="META-INF/EXTERNALDB.MF">
+		
+		<jar update="no" destfile="Course.jar" manifest="META-INF/COURSE.MF">
 			
-			<fileset
+			<fileset 
 				dir="bin/"
-				includes="psd/sprint/consortium/*.class"
+				includes="consortium/psd/Course/*.class"
 			/>
-			
+		
 		</jar>
+		
+		<jar update="no" destfile="Ui.jar" manifest="META-INF/UI.MF">
+			
+			<fileset 
+				dir="bin/"
+				includes="consortium/psd/UI/*.class"
+			/>
+		
+		</jar>
+
 		<jar update="no" destfile="User.jar" manifest="META-INF/USER.MF">
 					
 					<fileset 

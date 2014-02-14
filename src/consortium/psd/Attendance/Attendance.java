@@ -8,33 +8,32 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Attendance {
+import consortium.psd.UI.Student;
 
+public class Attendance {
 	String name;
 	ArrayList<Student> nameList = new ArrayList<Student>();
 	ArrayList<AttendanceList> att = new ArrayList<AttendanceList>();
 	String directory;
 	String getFileInfo;
-	
-	public Attendance(String name) {
 
+	public Attendance(String name) {
 		this.name = name;
 	}
 
 	public Attendance() {
-
 	}
 
 	public void importNameList() {
 		String file = "student.csv";
 		BufferedReader br = null;
+		
 		try {
 			String sCurrentLine;
 			br = new BufferedReader(new FileReader(file));
 			while ((sCurrentLine = br.readLine()) != null) {
 				String[] temp = sCurrentLine.split(",");
 				nameList.add(new Student(temp[0], temp[1], temp[2]));
-
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -91,7 +90,7 @@ public class Attendance {
 			writer.append(",");
 			writer.append("N");
 			writer.append('\n');
-			
+
 		}
 		writer.flush();
 		writer.close();

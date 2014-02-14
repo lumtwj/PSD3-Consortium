@@ -1,11 +1,11 @@
-package consortium.psd.Attendance;
+package consortium.psd.Course;
 
 import java.util.Scanner;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import consortium.psd.UI.Login;
+import consortium.psd.Course.Login;
 public class Activator implements BundleActivator {
 
 	private static BundleContext context;
@@ -24,6 +24,8 @@ public class Activator implements BundleActivator {
 	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
+		// TODO Auto-generated method stub
+
 		int flag = 0, securityCheck = 3;
 
 		Login lg = new Login();
