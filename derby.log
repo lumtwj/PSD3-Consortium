@@ -1,0 +1,48 @@
+----------------------------------------------------------------
+Sat Feb 15 10:04:52 SGT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0144-334a-03ea-0000061f4f68 
+on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
+Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.9.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Feb 15 10:04:53 SGT 2014:
+Shutting down instance a816c00e-0144-334a-03ea-0000061f4f68 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
+----------------------------------------------------------------
+Sat Feb 15 10:04:53 SGT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 08264012-0144-334a-03ea-0000061f4f68 
+on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
+Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.9.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Feb 15 10:04:54 SGT 2014:
+Shutting down instance 08264012-0144-334a-03ea-0000061f4f68 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
+----------------------------------------------------------------
+Sat Feb 15 10:04:55 SGT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 6839c016-0144-334a-03ea-0000061f4f68 
+on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
+Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.9.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Feb 15 10:04:55 SGT 2014:
+Shutting down instance 6839c016-0144-334a-03ea-0000061f4f68 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
