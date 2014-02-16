@@ -26,10 +26,11 @@ PSD3 Consortium Sprint 1 - Implementation
 
 3. 	I've already added the bundles in so that it the stuff can be easily edited. The folder has already been 			customised that as long as you import this folder in, you can go into your cygwin/terminal and run 'ant 		resolve' and 'ant run'. PLEASE also remember that if you are running on Eclipse, you will need to add 			reference library too, if not you will face a lot of error. 
 
-	As for the running, I've already name the external db as login.jar and Joe already had his as test.jar, you just 		have to type
+	As for running, install the file and start the bundle in the following sequence:
 
-		install file:test.jar
-		install file:login.jar
+		install file:Attendance.jar
+		install file:Course.jar
+		install file:UI.jar
 
 		start <id> 
 		stop <id>
