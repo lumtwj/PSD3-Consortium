@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Sun Feb 16 12:13:45 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0144-38e6-6014-00000608e5e0 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
+Sun Feb 16 12:26:07 SGT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0144-38f1-aff1-0000060895a8 
+on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortiumDB with class loader sun.misc.Launcher$AppClassLoader@530f243b 
 Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.7.0_45-b18
@@ -11,55 +11,7 @@ os.arch=x86_64
 os.version=10.9.1
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Sun Feb 16 12:13:46 SGT 2014:
-Shutting down instance a816c00e-0144-38e6-6014-00000608e5e0 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
-----------------------------------------------------------------
-Sun Feb 16 12:13:48 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 08264012-0144-38e6-6014-00000608e5e0 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.1
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Sun Feb 16 12:13:48 SGT 2014:
-Shutting down instance 08264012-0144-38e6-6014-00000608e5e0 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
-----------------------------------------------------------------
-Sun Feb 16 12:13:49 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 6839c016-0144-38e6-6014-00000608e5e0 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.1
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Sun Feb 16 12:13:49 SGT 2014:
-Shutting down instance 6839c016-0144-38e6-6014-00000608e5e0 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/attendanceDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
-----------------------------------------------------------------
-Sun Feb 16 12:13:59 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance c851401a-0144-38e6-6014-00000608e5e0 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortiumDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.1
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-Sun Feb 16 12:13:59 SGT 2014 Thread[Gogo shell,5,main] Cleanup action starting
+Sun Feb 16 12:26:07 SGT 2014 Thread[Gogo shell,5,main] Cleanup action starting
 java.sql.SQLException: Database 'attendanceDB' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
@@ -78,8 +30,8 @@ java.sql.SQLException: Database 'attendanceDB' not found.
 	at consortium.psd.Course.Courses.shutdown(Unknown Source)
 	at consortium.psd.Course.Courses.retriveCourse(Unknown Source)
 	at consortium.psd.Course.Courses.setupCourses(Unknown Source)
-	at consortium.psd.UI.Menu.layerTwo(Unknown Source)
-	at consortium.psd.UI.Activator.start(Unknown Source)
+	at consortium.psd.UI.Menu.layerTwo(Menu.java:180)
+	at consortium.psd.UI.Activator.start(Activator.java:59)
 	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:645)
 	at org.apache.felix.framework.Felix.activateBundle(Felix.java:2146)
 	at org.apache.felix.framework.Felix.startBundle(Felix.java:2064)
@@ -139,8 +91,8 @@ java.sql.SQLException: Database 'attendanceDB' not found.
 	at consortium.psd.Course.Courses.shutdown(Unknown Source)
 	at consortium.psd.Course.Courses.retriveCourse(Unknown Source)
 	at consortium.psd.Course.Courses.setupCourses(Unknown Source)
-	at consortium.psd.UI.Menu.layerTwo(Unknown Source)
-	at consortium.psd.UI.Activator.start(Unknown Source)
+	at consortium.psd.UI.Menu.layerTwo(Menu.java:180)
+	at consortium.psd.UI.Activator.start(Activator.java:59)
 	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:645)
 	at org.apache.felix.framework.Felix.activateBundle(Felix.java:2146)
 	at org.apache.felix.framework.Felix.startBundle(Felix.java:2064)

@@ -37,10 +37,10 @@ public class Activator implements BundleActivator {
 			} else {
 				if (securityCheck > 1)
 					System.out
-							.println("The username or password is wrong, please try again!");
+					.println("The username or password is wrong, please try again!");
 				else
 					System.out
-							.println("You have exceeded the maximum number of tries");
+					.println("You have exceeded the maximum number of tries");
 				securityCheck--;
 				flag = -1;
 			}
@@ -50,23 +50,21 @@ public class Activator implements BundleActivator {
 			menu = new Menu(status);
 			String choice = sc.nextLine();
 			if (isInteger(choice)) {
-				
+
 				if (Integer.parseInt(choice) != 0) {
 					flag++;
-					
+
 					while (flag == 1) {
 						if (Integer.parseInt(choice) != 0) {
 							menu.layerTwo(Integer.parseInt(choice));
 							choice = sc.nextLine();
-							
+
 							if (isInteger(choice)) {
 								if (Integer.parseInt(choice) == 0) {
 									flag--;
 								} else {
 									flag++;
 								}
-									
-								
 							}
 						} else {
 							flag--;
@@ -77,7 +75,7 @@ public class Activator implements BundleActivator {
 				}
 			} else {
 				System.out
-						.println("What you've keyed is not a number, please try again!");
+				.println("What you've keyed is not a number, please try again!");
 			}
 		}
 
@@ -95,7 +93,7 @@ public class Activator implements BundleActivator {
 		return size > 0;
 	}
 
-	
+
 
 	/*
 	 * (non-Javadoc)

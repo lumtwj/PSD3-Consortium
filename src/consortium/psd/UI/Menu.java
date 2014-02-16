@@ -76,6 +76,8 @@ public class Menu {
 				System.out.println("3.\tDelete Slot of Timetable");
 				System.out.println("4.\tView Timetable");
 				System.out.println("0.\tBack");
+
+				//new TimetableMenu();
 				break;
 				/** To-do: Timetable */
 			case 2:
