@@ -1,10 +1,16 @@
 package consortium.psd.UI;
 
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import consortium.psd.Attendance.Attendance;
+import consortium.psd.Course.Courses;
+
 public class Menu {
 
 	String user;
 	int mailbox = 0;
-	
+
 	public Menu(String user) {
 		this.user = user;
 		if (user.equals("admin")) {
@@ -17,7 +23,7 @@ public class Menu {
 			showMenu(4);
 		}
 	}
-	
+
 	public void showMenu(int u) { 
 		System.out.println("Welcome into the System.");
 		switch (u) {
@@ -29,7 +35,7 @@ public class Menu {
 			System.out.println("5.\tManage Facilities");
 			System.out.println("0.\tLogout");
 			break;
-			
+
 		case 2:
 			System.out.println("1.\tView Timetable");
 			System.out.println("2.\tApply for course avaliable");
@@ -37,7 +43,7 @@ public class Menu {
 			System.out.println("4.\tApply for drop course!");
 			System.out.println("0.\tLogout");
 			break;
-			
+
 		case 3:
 			System.out.println("1.\tView Timetable");
 			System.out.println("2.\tSet up additional course");
@@ -45,7 +51,7 @@ public class Menu {
 			System.out.println("4.\tView Attendance");
 			System.out.println("0.\tLogout");
 			break;
-			
+
 		case 4:
 			System.out.println("1.\tView Timetable");
 			System.out.println("2.\tApply to switch timeslot");
@@ -56,9 +62,10 @@ public class Menu {
 			break;
 		}
 	}
-	
-	public boolean layerTwo(int choice) {
-		
+
+	public boolean layerTwo(int choice) throws ClassNotFoundException, SQLException {
+		Scanner scanner = new Scanner (System.in);
+
 		if (user.equals("admin")) {
 			switch (choice) {
 			case 1:
@@ -127,13 +134,25 @@ public class Menu {
 				/** To-do: Timetable */
 			case 2:
 				/** To-do: Course */
+				//System.out.println("===   Course Available   ===");
 				System.out.println("===   Course Available   ===");
-				System.out.println("zz.\t Enter the number indicated to the course to apply or enter 0 to go back.");
+				Courses course = new Courses();
+				course.retriveCourse();
+				course.applyCourse();
+				showMenu(2);
+				int menuChoice = Integer.parseInt(scanner.nextLine()); 
+				layerTwo(menuChoice);
+				//System.out.println("zz.\t Enter the number indicated to the course to apply or enter 0 to go back.");
 				break;
 				/** To-do: Course */
 			case 3:
 				/** To-do: Course */
-				System.out.println("===   Semester Compulsory Course   ===");
+				//System.out.println("===   Semester Compulsory Course   ===");
+				course = new Courses();
+				course.retriveCompulsoryCourse();
+				showMenu(2);
+				menuChoice = Integer.parseInt(scanner.nextLine()); 
+				layerTwo(menuChoice);
 				System.out.println("Please Enter 0 to go back.");
 				break;
 				/** To-do: Course */
@@ -144,7 +163,7 @@ public class Menu {
 				break;
 				/** To-do: Course */
 			}
-			
+
 		} else if (user.equals("lecturer")) {
 			switch (choice) {
 			case 1:
@@ -156,8 +175,13 @@ public class Menu {
 				/** To-do: Timetable */
 			case 2:
 				/** To-do: Course */
-				System.out.println("===   Setup Additional Course   ===");
-				System.out.println("zz.\t Enter 0 to go back.");
+				//System.out.println("===   Setup Additional Course   ===");
+				Courses course = new Courses();
+				course.setupCourses();
+				showMenu(3);
+				int menuChoice = Integer.parseInt(scanner.nextLine()); 
+				layerTwo(menuChoice);
+				//System.out.println("zz.\t Enter 0 to go back.");
 				break;
 				/** To-do: Course */
 			case 3:
@@ -169,7 +193,9 @@ public class Menu {
 			case 4:
 				/** To-do: Attendance */
 				System.out.println("===   View Attendance   ===");
-				System.out.println("Enter the number indicated to the course you wish to view or enter 0 to go back.");
+				Attendance att = new Attendance();
+				att.viewAttendance();
+				System.out.println("Enter 0 to go back.");
 				break;
 				/** To-do: Attendance */
 			}
@@ -178,18 +204,18 @@ public class Menu {
 			case 1:
 				/** To-do: Timetable */
 				System.out.println("===   Timetable   ===");				
-				//displayTimetable();
 				System.out.println("Enter the number indicated to the event to view the detail or enter 0 to go back.");
+
 				break;
 				/** To-do: Timetable */
 			case 2:
 				System.out.println("===   Apply to Switch   ===");
 				System.out.println("Enter the number indicating the person you wish to swap with.");
 				break;
-							
+
 			}
 		}
-		
+
 		return false;
 	}
 

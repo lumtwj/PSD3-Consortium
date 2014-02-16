@@ -118,6 +118,15 @@
 		
 		</jar>
 		
+		<jar update="no" destfile="Timetable.jar" manifest="META-INF/TIMETABLE.MF">
+			
+			<fileset 
+				dir="bin/"
+				includes="consortium/psd/Timetable/*.class"
+			/>
+		
+		</jar>
+		
 		<jar update="no" destfile="Ui.jar" manifest="META-INF/UI.MF">
 			
 			<fileset 
