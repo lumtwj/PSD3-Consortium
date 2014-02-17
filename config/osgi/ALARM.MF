@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Lab Sensor Alarm
+Bundle-SymbolicName: uk.ac.glasgow.senotes.components.lab.Alarm
+Bundle-Version: 1.0.0
+Bundle-Activator: uk.ac.glasgow.senotes.components.lab.alarm.Activator
+Bundle-Vendor: University of Glasgow
+Bundle-Localization: plugin
+Import-Package: uk.ac.glasgow.senotes.components.lab.repository,
+  org.osgi.framework;version="1.3.0"
