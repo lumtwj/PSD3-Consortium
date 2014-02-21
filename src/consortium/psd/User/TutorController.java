@@ -18,23 +18,22 @@ public class TutorController
 	Statement statement = null;
 	String DB = "ROOT";
 
-	public List<User> retriveTutors() throws ClassNotFoundException, SQLException {
+	public List<Tutor> retriveAllTutors() throws ClassNotFoundException, SQLException {
 
-		List<User> tutorList = new ArrayList<User>();
-		User tutor;
+		List<Tutor> tutorList = new ArrayList<Tutor>();
+		Tutor tutor;
 		connection = DriverManager.getConnection("jdbc:derby:consortium");
 		statement = connection.createStatement();
 		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where role='tutor'");
 
 		while (resultSet.next()) {
-			tutor = new User();
-			tutor.setId(resultSet.getInt(1));
-			tutor.setUsername(resultSet.getString(2));
-			tutor.setPassword(resultSet.getString(3));
-			tutor.setName(resultSet.getString(4));
-			tutor.setEmail(resultSet.getString(5));
-			tutor.setRole(resultSet.getString(6));
-
+			tutor = new Tutor();
+			tutor.setId(resultSet.getInt("user_id"));
+			tutor.setUsername(resultSet.getString("username"));
+			tutor.setPassword(resultSet.getString("password"));
+			tutor.setName(resultSet.getString("fullname"));
+			tutor.setEmail(resultSet.getString("email"));
+			tutor.setRole(resultSet.getString("role"));
 			tutorList.add(tutor);			
 
 
@@ -46,21 +45,21 @@ public class TutorController
 		return tutorList;
 	}
 
-	public User retriveTutorById(int id) throws ClassNotFoundException, SQLException {
+	public Tutor retriveTutorByUserId(int id) throws ClassNotFoundException, SQLException {
 
 
-		User tutor = new User();;
+		Tutor tutor = new Tutor();;
 		connection = DriverManager.getConnection("jdbc:derby:consortium");
 		statement = connection.createStatement();
 		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where user_id="+id);
 
 		while (resultSet.next()) {
-			tutor.setId(resultSet.getInt(1));
-			tutor.setUsername(resultSet.getString(2));
-			tutor.setPassword(resultSet.getString(3));
-			tutor.setName(resultSet.getString(4));
-			tutor.setEmail(resultSet.getString(5));
-			tutor.setRole(resultSet.getString(6));
+			tutor.setId(resultSet.getInt("user_id"));
+			tutor.setUsername(resultSet.getString("username"));
+			tutor.setPassword(resultSet.getString("password"));
+			tutor.setName(resultSet.getString("fullname"));
+			tutor.setEmail(resultSet.getString("email"));
+			tutor.setRole(resultSet.getString("role"));
 
 		}
 		resultSet.close();
@@ -69,6 +68,68 @@ public class TutorController
 		shutdown();
 		return tutor;
 	}
+	
+	public List<Tutor> retriveTutorsListByCourseId(int id) throws ClassNotFoundException, SQLException {
+
+		List<Tutor> tutorList = new ArrayList<Tutor>();
+		Tutor tutor;
+		connection = DriverManager.getConnection("jdbc:derby:consortium");
+		statement = connection.createStatement();
+		
+		//to edit
+		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where role='tutor'");
+
+		while (resultSet.next()) {
+			tutor = new Tutor();
+			tutor.setId(resultSet.getInt("user_id"));
+			tutor.setUsername(resultSet.getString("username"));
+			tutor.setPassword(resultSet.getString("password"));
+			tutor.setName(resultSet.getString("fullname"));
+			tutor.setEmail(resultSet.getString("email"));
+			tutor.setRole(resultSet.getString("role"));
+			
+			tutorList.add(tutor);			
+
+
+		}
+		resultSet.close();
+		statement.close();
+		connection.close();
+		shutdown();
+		return tutorList;
+	}
+	
+	public List<Tutor> retriveTutorsListByTimetableId(int id) throws ClassNotFoundException, SQLException {
+
+		List<Tutor> tutorList = new ArrayList<Tutor>();
+		Tutor tutor;
+		connection = DriverManager.getConnection("jdbc:derby:consortium");
+		statement = connection.createStatement();
+		
+		//to edit
+		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where role='tutor'");
+
+		while (resultSet.next()) {
+			tutor = new Tutor();
+			tutor.setId(resultSet.getInt("user_id"));
+			tutor.setUsername(resultSet.getString("username"));
+			tutor.setPassword(resultSet.getString("password"));
+			tutor.setName(resultSet.getString("fullname"));
+			tutor.setEmail(resultSet.getString("email"));
+			tutor.setRole(resultSet.getString("role"));
+
+			tutorList.add(tutor);
+
+
+		}
+		resultSet.close();
+		statement.close();
+		connection.close();
+		shutdown();
+		return tutorList;
+	}
+	
+	
 
 	private void shutdown() 
 	{

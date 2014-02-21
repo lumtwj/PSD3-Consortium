@@ -13,28 +13,114 @@ import java.util.List;
 
 public class StudentController 
 {
-	
+
 	Connection connection = null;
 	ResultSet resultSet = null;
 	Statement statement = null;
 	String DB = "ROOT";
 
-	public List<User> retriveStudents() throws ClassNotFoundException, SQLException {
+	public List<Student> retriveAllStudents() throws ClassNotFoundException, SQLException {
 
-		List<User> studentList = new ArrayList<User>();
-		User student;
+		List<Student> studentList = new ArrayList<Student>();
+		Student student;
 		connection = DriverManager.getConnection("jdbc:derby:consortium");
 		statement = connection.createStatement();
 		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where role='student'");
 
 		while (resultSet.next()) {
-			student = new User();
-			student.setId(resultSet.getInt(1));
-			student.setUsername(resultSet.getString(2));
-			student.setPassword(resultSet.getString(3));
-			student.setName(resultSet.getString(4));
-			student.setEmail(resultSet.getString(5));
-			student.setRole(resultSet.getString(6));
+			student = new Student();
+			student.setId(resultSet.getInt("user_id"));
+			student.setUsername(resultSet.getString("username"));
+			student.setPassword(resultSet.getString("password"));
+			student.setName(resultSet.getString("fullname"));
+			student.setEmail(resultSet.getString("email"));
+			student.setRole(resultSet.getString("role"));
+
+			studentList.add(student);			
+
+
+		}
+		resultSet.close();
+		statement.close();
+		connection.close();
+		shutdown();
+		return studentList;
+	}
+
+	public Student retriveStudentByUserId(int id) throws ClassNotFoundException, SQLException {
+
+
+		Student student = new Student();;
+		connection = DriverManager.getConnection("jdbc:derby:consortium");
+		statement = connection.createStatement();
+		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where user_id="+id);
+
+		while (resultSet.next()) {
+			student.setId(resultSet.getInt("user_id"));
+			student.setUsername(resultSet.getString("username"));
+			student.setPassword(resultSet.getString("password"));
+			student.setName(resultSet.getString("fullname"));
+			student.setEmail(resultSet.getString("email"));
+			student.setRole(resultSet.getString("role"));
+			
+		}
+		resultSet.close();
+		statement.close();
+		connection.close();
+		shutdown();
+		return student;
+	}
+
+	public List<Student> retriveStudentListByClassId(int id) throws ClassNotFoundException, SQLException {
+
+
+		List<Student> studentList = new ArrayList<Student>();
+		Student student;
+		connection = DriverManager.getConnection("jdbc:derby:consortium");
+		statement = connection.createStatement();
+		
+		//to edit!
+		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where role='student'");
+
+		while (resultSet.next()) {
+			student = new Student();
+			student.setId(resultSet.getInt("user_id"));
+			student.setUsername(resultSet.getString("username"));
+			student.setPassword(resultSet.getString("password"));
+			student.setName(resultSet.getString("fullname"));
+			student.setEmail(resultSet.getString("email"));
+			student.setRole(resultSet.getString("role"));
+		
+			studentList.add(student);			
+
+
+		}
+		resultSet.close();
+		statement.close();
+		connection.close();
+		shutdown();
+		return studentList;
+	}
+	
+	public List<Student> retriveStudentListByCourseId(int id) throws ClassNotFoundException, SQLException {
+
+
+		List<Student> studentList = new ArrayList<Student>();
+		Student student;
+		connection = DriverManager.getConnection("jdbc:derby:consortium");
+		statement = connection.createStatement();
+		
+		//to edit!
+		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where role='student'");
+
+		while (resultSet.next()) {
+			student = new Student();
+			student.setId(resultSet.getInt("user_id"));
+			student.setUsername(resultSet.getString("username"));
+			student.setPassword(resultSet.getString("password"));
+			student.setName(resultSet.getString("fullname"));
+			student.setEmail(resultSet.getString("email"));
+			student.setRole(resultSet.getString("role"));
 
 			studentList.add(student);			
 
@@ -47,30 +133,39 @@ public class StudentController
 		return studentList;
 	}
 	
-	public User retriveStudentById(int id) throws ClassNotFoundException, SQLException {
-		
-		
-		User student = new User();;
+	public List<Student> retriveStudentListByTimetableId(int id) throws ClassNotFoundException, SQLException {
+
+
+		List<Student> studentList = new ArrayList<Student>();
+		Student student;
 		connection = DriverManager.getConnection("jdbc:derby:consortium");
 		statement = connection.createStatement();
-		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where user_id="+id);
+		
+		//to edit!
+		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where role='student'");
 
 		while (resultSet.next()) {
-			student.setId(resultSet.getInt(1));
-			student.setUsername(resultSet.getString(2));
-			student.setPassword(resultSet.getString(3));
-			student.setName(resultSet.getString(4));
-			student.setEmail(resultSet.getString(5));
-			student.setRole(resultSet.getString(6));
+			student = new Student();
+			student.setId(resultSet.getInt("user_id"));
+			student.setUsername(resultSet.getString("username"));
+			student.setPassword(resultSet.getString("password"));
+			student.setName(resultSet.getString("fullname"));
+			student.setEmail(resultSet.getString("email"));
+			student.setRole(resultSet.getString("role"));
+
+			studentList.add(student);			
+
 
 		}
 		resultSet.close();
 		statement.close();
 		connection.close();
 		shutdown();
-		return student;
+		return studentList;
 	}
 	
+	
+
 	private void shutdown() 
 	{
 		try {
@@ -90,7 +185,7 @@ public class StudentController
 
 
 
-
+	// CSV VERSION!
 	public User getStudent(int id)
 	{
 		User student = new User();

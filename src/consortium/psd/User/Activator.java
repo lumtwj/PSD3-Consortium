@@ -13,32 +13,32 @@ public class Activator implements BundleActivator {
 		TutorController tController = new TutorController();
 
 		System.out.println("\nSTUDENT:getStudent(11)");
-		User s1 = sController.retriveStudentById(11);
+		User s1 = sController.retriveStudentByUserId(11);
 		System.out.format("id:%s\tname:%s\trole:%s\n", s1.id,s1.name,s1.role);
 		
 		System.out.println("\nSTUDENT:getStudentList()");
 //		for (User s : sController.getStudentList()) 
-		for (User s : sController.retriveStudents())
+		for (User s : sController.retriveAllStudents())
 		{
 			System.out.format("id:%s\tname:%s\trole:%s\n", s.id,s.name,s.role);
 		}
 		
 		System.out.println("\nLECTURER:getLecturer(3)");
-		User ll = lController.retriveLecturerById(3);
+		User ll = lController.retriveLecturerByUserId(3);
 		System.out.format("id:%s\tname:%s\trole:%s\n", ll.id,ll.name,ll.role);
 		
 		System.out.println("\nLECTURER:getLecturerList()");		
-		for (User l :lController.retriveLecturers()) 
+		for (User l :lController.retriveAllLecturers()) 
 		{
 			System.out.format("id:%s\tname:%s\trole:%s\n", l.id,l.name,l.role);
 		}
 		
 		System.out.println("\nTUTOR:retriveTutorById(7)");
-		User tt = tController.retriveTutorById(7);
+		User tt = tController.retriveTutorByUserId(7);
 		System.out.format("id:%s\tname:%s\trole:%s\n", tt.id,tt.name,tt.role);
 		
 		System.out.println("\nTUTOR:retriveTutors()");		
-		for (User t :tController.retriveTutors()) 
+		for (User t :tController.retriveAllTutors()) 
 		{
 			System.out.format("id:%s\tname:%s\trole:%s\n", t.id,t.name,t.role);
 		}

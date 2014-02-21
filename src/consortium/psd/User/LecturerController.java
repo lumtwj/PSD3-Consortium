@@ -18,22 +18,22 @@ public class LecturerController
 	Statement statement = null;
 	String DB = "ROOT";
 
-	public List<User> retriveLecturers() throws ClassNotFoundException, SQLException {
+	public List<Lecturer> retriveAllLecturers() throws ClassNotFoundException, SQLException {
 
-		List<User> lecturerList = new ArrayList<User>();
-		User lecturer;
+		List<Lecturer> lecturerList = new ArrayList<Lecturer>();
+		Lecturer lecturer;
 		connection = DriverManager.getConnection("jdbc:derby:consortium");
 		statement = connection.createStatement();
 		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where role='lecturer'");
 
 		while (resultSet.next()) {
-			lecturer = new User();
-			lecturer.setId(resultSet.getInt(1));
-			lecturer.setUsername(resultSet.getString(2));
-			lecturer.setPassword(resultSet.getString(3));
-			lecturer.setName(resultSet.getString(4));
-			lecturer.setEmail(resultSet.getString(5));
-			lecturer.setRole(resultSet.getString(6));
+			lecturer = new Lecturer();
+			lecturer.setId(resultSet.getInt("user_id"));
+			lecturer.setUsername(resultSet.getString("username"));
+			lecturer.setPassword(resultSet.getString("password"));
+			lecturer.setName(resultSet.getString("fullname"));
+			lecturer.setEmail(resultSet.getString("email"));
+			lecturer.setRole(resultSet.getString("role"));
 
 			lecturerList.add(lecturer);			
 
@@ -46,21 +46,21 @@ public class LecturerController
 		return lecturerList;
 	}
 
-	public User retriveLecturerById(int id) throws ClassNotFoundException, SQLException {
+	public Lecturer retriveLecturerByUserId(int id) throws ClassNotFoundException, SQLException {
 
 
-		User lecturer = new User();;
+		Lecturer lecturer = new Lecturer();;
 		connection = DriverManager.getConnection("jdbc:derby:consortium");
 		statement = connection.createStatement();
 		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where user_id="+id);
 
 		while (resultSet.next()) {
-			lecturer.setId(resultSet.getInt(1));
-			lecturer.setUsername(resultSet.getString(2));
-			lecturer.setPassword(resultSet.getString(3));
-			lecturer.setName(resultSet.getString(4));
-			lecturer.setEmail(resultSet.getString(5));
-			lecturer.setRole(resultSet.getString(6));
+			lecturer.setId(resultSet.getInt("user_id"));
+			lecturer.setUsername(resultSet.getString("username"));
+			lecturer.setPassword(resultSet.getString("password"));
+			lecturer.setName(resultSet.getString("fullname"));
+			lecturer.setEmail(resultSet.getString("email"));
+			lecturer.setRole(resultSet.getString("role"));
 
 		}
 		resultSet.close();
@@ -68,6 +68,66 @@ public class LecturerController
 		connection.close();
 		shutdown();
 		return lecturer;
+	}
+	
+	public List<Lecturer> retriveLecturerListByCourseId(int id) throws ClassNotFoundException, SQLException {
+
+		List<Lecturer> lecturerList = new ArrayList<Lecturer>();
+		Lecturer lecturer;
+		connection = DriverManager.getConnection("jdbc:derby:consortium");
+		statement = connection.createStatement();
+		
+		//To edit!!
+		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where role='lecturer'");
+
+		while (resultSet.next()) {
+			lecturer = new Lecturer();
+			lecturer.setId(resultSet.getInt("user_id"));
+			lecturer.setUsername(resultSet.getString("username"));
+			lecturer.setPassword(resultSet.getString("password"));
+			lecturer.setName(resultSet.getString("fullname"));
+			lecturer.setEmail(resultSet.getString("email"));
+			lecturer.setRole(resultSet.getString("role"));
+
+			lecturerList.add(lecturer);			
+
+
+		}
+		resultSet.close();
+		statement.close();
+		connection.close();
+		shutdown();
+		return lecturerList;
+	}
+	
+	public List<Lecturer> retriveLecturerListByTimetableId(int id) throws ClassNotFoundException, SQLException {
+
+		List<Lecturer> lecturerList = new ArrayList<Lecturer>();
+		Lecturer lecturer;
+		connection = DriverManager.getConnection("jdbc:derby:consortium");
+		statement = connection.createStatement();
+		
+		//To edit!!
+		resultSet = statement.executeQuery("SELECT * from "+ DB +".\"user\" where role='lecturer'");
+
+		while (resultSet.next()) {
+			lecturer = new Lecturer();
+			lecturer.setId(resultSet.getInt("user_id"));
+			lecturer.setUsername(resultSet.getString("username"));
+			lecturer.setPassword(resultSet.getString("password"));
+			lecturer.setName(resultSet.getString("fullname"));
+			lecturer.setEmail(resultSet.getString("email"));
+			lecturer.setRole(resultSet.getString("role"));
+
+			lecturerList.add(lecturer);			
+
+
+		}
+		resultSet.close();
+		statement.close();
+		connection.close();
+		shutdown();
+		return lecturerList;
 	}
 
 	private void shutdown() 
