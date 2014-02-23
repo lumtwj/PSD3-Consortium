@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import consortium.psd.Attendance.Attendance;
+import consortium.psd.Course.Courses;
 import consortium.psd.Room.RoomController;
 import consortium.psd.User.Login;
 
@@ -118,10 +119,34 @@ public class Menu {
 			break;
 		case 2:
 			//Apply for course available
+			System.out.println("===   Course Available   ===");
+			try {
+				Courses course = new Courses();
+				course.retriveCourse();
+				course.applyCourse();
+			} 
+			catch (SQLException e) {e.printStackTrace();}
+
+			//showMenu(2);
+			//int menuChoice = Integer.parseInt(scanner.nextLine()); 
+			//layerTwo(menuChoice);
+			//System.out.println("zz.\t Enter the number indicated to the course to apply or enter 0 to go back.");
+
 			displayMenu(STUDENT);
 			break;
 		case 3:
 			//View semester compulsory course
+			try {
+				Courses course = new Courses();
+				course.retriveCompulsoryCourse();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//showMenu(2);
+			//menuChoice = Integer.parseInt(scanner.nextLine()); 
+			//layerTwo(menuChoice);
+
 			displayMenu(STUDENT);
 			break;
 		case 4:
@@ -176,6 +201,17 @@ public class Menu {
 			break;
 		case 2:
 			//Set up additional course
+			try {
+				Courses course = new Courses();
+				course.setupCourses();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			//showMenu(3);
+			//int menuChoice = Integer.parseInt(scanner.nextLine()); 
+			//layerTwo(menuChoice);
+
 			displayMenu(LECTURER);
 			break;
 		case 3:

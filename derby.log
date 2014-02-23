@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Sun Feb 23 20:09:12 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0144-5ea6-29f1-0000060951c0 
+Sun Feb 23 20:32:39 SGT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0144-5ebb-a401-000005fdc388 
 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@23137792 
 Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation
@@ -12,5 +12,142 @@ os.version=10.9.1
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Sun Feb 23 20:09:12 SGT 2014:
-Shutting down instance a816c00e-0144-5ea6-29f1-0000060951c0 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@23137792 
+Sun Feb 23 20:32:40 SGT 2014:
+Shutting down instance a816c00e-0144-5ebb-a401-000005fdc388 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@23137792 
+----------------------------------------------------------------
+Sun Feb 23 20:32:43 SGT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance fb160050-0144-5ebb-a401-000005fdc388 
+on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortiumDB with class loader sun.misc.Launcher$AppClassLoader@23137792 
+Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.9.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+Sun Feb 23 20:32:43 SGT 2014 Thread[Gogo shell,5,main] Cleanup action starting
+java.sql.SQLException: Database 'attendanceDB' not found.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.Driver20.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at java.sql.DriverManager.getConnection(DriverManager.java:571)
+	at java.sql.DriverManager.getConnection(DriverManager.java:233)
+	at consortium.psd.Course.Courses.shutdown(Courses.java:136)
+	at consortium.psd.Course.Courses.retriveCourse(Courses.java:47)
+	at consortium.psd.UI.Menu.student(Menu.java:125)
+	at consortium.psd.UI.Menu.displayMenu(Menu.java:76)
+	at consortium.psd.UI.Menu.retrieveMenu(Menu.java:48)
+	at consortium.psd.UI.Menu.login(Menu.java:34)
+	at consortium.psd.UI.Menu.<init>(Menu.java:25)
+	at consortium.psd.UI.Activator.start(Activator.java:7)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:645)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:2146)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:2064)
+	at org.apache.felix.framework.BundleImpl.start(BundleImpl.java:955)
+	at org.apache.felix.gogo.command.Basic.start(Basic.java:729)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.felix.gogo.runtime.Reflective.invoke(Reflective.java:137)
+	at org.apache.felix.gogo.runtime.CommandProxy.execute(CommandProxy.java:82)
+	at org.apache.felix.gogo.runtime.Closure.executeCmd(Closure.java:477)
+	at org.apache.felix.gogo.runtime.Closure.executeStatement(Closure.java:403)
+	at org.apache.felix.gogo.runtime.Pipe.run(Pipe.java:108)
+	at org.apache.felix.gogo.runtime.Closure.execute(Closure.java:183)
+	at org.apache.felix.gogo.runtime.Closure.execute(Closure.java:120)
+	at org.apache.felix.gogo.runtime.CommandSessionImpl.execute(CommandSessionImpl.java:89)
+	at org.apache.felix.gogo.shell.Console.run(Console.java:62)
+	at org.apache.felix.gogo.shell.Shell.console(Shell.java:203)
+	at org.apache.felix.gogo.shell.Shell.gosh(Shell.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.felix.gogo.runtime.Reflective.invoke(Reflective.java:137)
+	at org.apache.felix.gogo.runtime.CommandProxy.execute(CommandProxy.java:82)
+	at org.apache.felix.gogo.runtime.Closure.executeCmd(Closure.java:477)
+	at org.apache.felix.gogo.runtime.Closure.executeStatement(Closure.java:403)
+	at org.apache.felix.gogo.runtime.Pipe.run(Pipe.java:108)
+	at org.apache.felix.gogo.runtime.Closure.execute(Closure.java:183)
+	at org.apache.felix.gogo.runtime.Closure.execute(Closure.java:120)
+	at org.apache.felix.gogo.runtime.CommandSessionImpl.execute(CommandSessionImpl.java:89)
+	at org.apache.felix.gogo.shell.Activator.run(Activator.java:75)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.sql.SQLException: Database 'attendanceDB' not found.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 56 more
+============= begin nested exception, level (1) ===========
+java.sql.SQLException: Database 'attendanceDB' not found.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.Driver20.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at java.sql.DriverManager.getConnection(DriverManager.java:571)
+	at java.sql.DriverManager.getConnection(DriverManager.java:233)
+	at consortium.psd.Course.Courses.shutdown(Courses.java:136)
+	at consortium.psd.Course.Courses.retriveCourse(Courses.java:47)
+	at consortium.psd.UI.Menu.student(Menu.java:125)
+	at consortium.psd.UI.Menu.displayMenu(Menu.java:76)
+	at consortium.psd.UI.Menu.retrieveMenu(Menu.java:48)
+	at consortium.psd.UI.Menu.login(Menu.java:34)
+	at consortium.psd.UI.Menu.<init>(Menu.java:25)
+	at consortium.psd.UI.Activator.start(Activator.java:7)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:645)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:2146)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:2064)
+	at org.apache.felix.framework.BundleImpl.start(BundleImpl.java:955)
+	at org.apache.felix.gogo.command.Basic.start(Basic.java:729)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.felix.gogo.runtime.Reflective.invoke(Reflective.java:137)
+	at org.apache.felix.gogo.runtime.CommandProxy.execute(CommandProxy.java:82)
+	at org.apache.felix.gogo.runtime.Closure.executeCmd(Closure.java:477)
+	at org.apache.felix.gogo.runtime.Closure.executeStatement(Closure.java:403)
+	at org.apache.felix.gogo.runtime.Pipe.run(Pipe.java:108)
+	at org.apache.felix.gogo.runtime.Closure.execute(Closure.java:183)
+	at org.apache.felix.gogo.runtime.Closure.execute(Closure.java:120)
+	at org.apache.felix.gogo.runtime.CommandSessionImpl.execute(CommandSessionImpl.java:89)
+	at org.apache.felix.gogo.shell.Console.run(Console.java:62)
+	at org.apache.felix.gogo.shell.Shell.console(Shell.java:203)
+	at org.apache.felix.gogo.shell.Shell.gosh(Shell.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.felix.gogo.runtime.Reflective.invoke(Reflective.java:137)
+	at org.apache.felix.gogo.runtime.CommandProxy.execute(CommandProxy.java:82)
+	at org.apache.felix.gogo.runtime.Closure.executeCmd(Closure.java:477)
+	at org.apache.felix.gogo.runtime.Closure.executeStatement(Closure.java:403)
+	at org.apache.felix.gogo.runtime.Pipe.run(Pipe.java:108)
+	at org.apache.felix.gogo.runtime.Closure.execute(Closure.java:183)
+	at org.apache.felix.gogo.runtime.Closure.execute(Closure.java:120)
+	at org.apache.felix.gogo.runtime.CommandSessionImpl.execute(CommandSessionImpl.java:89)
+	at org.apache.felix.gogo.shell.Activator.run(Activator.java:75)
+	at java.lang.Thread.run(Thread.java:744)
+============= end nested exception, level (1) ===========
+Cleanup action completed
