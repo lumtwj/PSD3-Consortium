@@ -66,9 +66,8 @@ public class RoomController {
 	}
 	
 	public void save() {
-		String url = "/Users/Derrick/Documents/Programming/Java/PSDConsortium/room.csv";
+		String url = "room.csv";
 		try {
-			@SuppressWarnings("resource")
 			FileWriter writer = new FileWriter(url);
 			
 			for (Room r : room) {
@@ -91,7 +90,7 @@ public class RoomController {
 			String sCurrentLine;
 			br = new BufferedReader(
 					new FileReader(
-							"/Users/Derrick/Documents/Programming/Java/PSDConsortium/room.csv"));
+							"room.csv"));
 			while ((sCurrentLine = br.readLine()) != null) {
 				String[] temp = sCurrentLine.split(",");
 				if (isInteger(temp[3]) && isInteger(temp[0])) {

@@ -3,9 +3,6 @@ package consortium.psd.Room;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class Database {
 	
@@ -28,7 +25,7 @@ public class Database {
 		User u = null;
 		try {
 			String sCurrentLine;
-			br = new BufferedReader(new FileReader("/Users/Derrick/Documents/Programming/Java/PSDConsortium/user.csv"));
+			br = new BufferedReader(new FileReader("user.csv"));
 			while ((sCurrentLine = br.readLine()) != null) {			
 				String[] temp = sCurrentLine.split(",");
 				if (user.equals(temp[0]) && user.equals(temp[1])) {

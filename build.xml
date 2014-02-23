@@ -145,7 +145,7 @@
 				
 		</jar>
 
-				<jar update="no" destfile="Room.jar" manifest="META-INF/ROOM.MF">
+		<jar update="no" destfile="Room.jar" manifest="META-INF/ROOM.MF">
 					
 					<fileset 
 						dir="bin/"
