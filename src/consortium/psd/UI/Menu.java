@@ -1,7 +1,9 @@
 package consortium.psd.UI;
+import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import consortium.psd.Attendance.Attendance;
 import consortium.psd.User.Login;
 
 public class Menu {
@@ -17,7 +19,7 @@ public class Menu {
 
 	public Menu() {
 		s = new Scanner(System.in);
-		
+
 		login();
 	}
 
@@ -42,7 +44,6 @@ public class Menu {
 			login();
 		}
 		else {
-			System.out.println(lg.checkStatus());
 			displayMenu(roleResolver(lg.checkStatus()));
 		}
 	}
@@ -145,6 +146,16 @@ public class Menu {
 			break;
 		case 4:
 			//View Attendance
+			System.out.println("===   View Attendance   ===");
+
+			try {
+				Attendance att = new Attendance();
+				att.viewAttendance();
+				System.out.println("\n");
+			} 
+			catch (ClassNotFoundException e) {e.printStackTrace();}
+			catch (SQLException e) {e.printStackTrace();}
+
 			displayMenu(LECTURER);
 			break;
 		default:
