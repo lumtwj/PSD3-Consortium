@@ -1,10 +1,10 @@
 package consortium.psd.UI;
-import java.sql.SQLException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import consortium.psd.Attendance.Attendance;
-import consortium.psd.Course.Courses;
+import consortium.psd.Attendance.NRController;
+import consortium.psd.Course.CourseController;
 import consortium.psd.Room.RoomController;
 import consortium.psd.User.Login;
 
@@ -13,6 +13,8 @@ public class Menu {
 	private static final int STUDENT = 1;
 	private static final int LECTURER = 2;
 	private static final int TUTOR = 3;
+	static CourseController cc = new CourseController();
+	static NRController nc = new NRController();
 
 	Scanner s;
 
@@ -60,6 +62,7 @@ public class Menu {
 				System.out.println("3.\tManage Lecturer Group");
 				System.out.println("4.\tManage Tutor Group");
 				System.out.println("5.\tManage Rooms");
+				System.out.println("6.\tManage Attendance");
 				//System.out.println("5.\tManage Facilities");
 				System.out.println("0.\tLogout");
 				displaySubMenu(getInputForMenu());
@@ -72,6 +75,7 @@ public class Menu {
 				System.out.println("3.\tView semester compulsory course");
 				System.out.println("4.\tApply for drop course!");
 				System.out.println("5.\tView Room");
+				System.out.println("6.\tView Course");
 				System.out.println("0.\tLogout");
 				student(getInputForMenu());
 
@@ -83,6 +87,9 @@ public class Menu {
 				System.out.println("3.\tView semester compulsory course");
 				System.out.println("4.\tView Attendance");
 				System.out.println("5.\tView Room");
+				System.out.println("6.\tView Course");
+				System.out.println("7.\tAdd Course");
+				System.out.println("8.\tMark Attendance");
 				System.out.println("0.\tLogout");
 				lecturer(getInputForMenu());
 
@@ -92,6 +99,7 @@ public class Menu {
 				System.out.println("1.\tView Timetable");
 				System.out.println("2.\tApply to switch timeslot");
 				System.out.println("3.\tView Room");
+				System.out.println("4.\tView Course");
 				/*if (mailbox > 0) {
 					System.out.println("3.\tView Requested Swap");
 				}*/
@@ -119,33 +127,11 @@ public class Menu {
 			break;
 		case 2:
 			//Apply for course available
-			System.out.println("===   Course Available   ===");
-			try {
-				Courses course = new Courses();
-				course.retriveCourse();
-				course.applyCourse();
-			} 
-			catch (SQLException e) {e.printStackTrace();}
-
-			//showMenu(2);
-			//int menuChoice = Integer.parseInt(scanner.nextLine()); 
-			//layerTwo(menuChoice);
-			//System.out.println("zz.\t Enter the number indicated to the course to apply or enter 0 to go back.");
 
 			displayMenu(STUDENT);
 			break;
 		case 3:
 			//View semester compulsory course
-			try {
-				Courses course = new Courses();
-				course.retriveCompulsoryCourse();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			//showMenu(2);
-			//menuChoice = Integer.parseInt(scanner.nextLine()); 
-			//layerTwo(menuChoice);
 
 			displayMenu(STUDENT);
 			break;
@@ -182,6 +168,28 @@ public class Menu {
 			displayMenu(STUDENT);
 
 			break;
+		case 6:
+			//View course
+			boolean flag = true;
+			while (flag) {
+				cc.viewCourse();
+				System.out
+				.println("Which course do you want to view. Key 0 to exit");
+				int course = s.nextInt();
+				if (course <= cc.getSize()) {
+					if (course == 0) {
+						flag = false;
+					} else {
+						cc.viewCourse(course);
+					}
+				} else {
+					System.out.println("Value out of bound");
+				}
+			}
+
+			displayMenu(STUDENT);
+
+			break;
 		default:
 			System.out.println("Invalid options!\n");
 			displayMenu(STUDENT);
@@ -190,6 +198,8 @@ public class Menu {
 	}
 
 	private void lecturer(int selection) {
+		Scanner sc = new Scanner(System.in);
+
 		switch (selection) {
 		case 0:
 			//Logout
@@ -201,16 +211,6 @@ public class Menu {
 			break;
 		case 2:
 			//Set up additional course
-			try {
-				Courses course = new Courses();
-				course.setupCourses();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			//showMenu(3);
-			//int menuChoice = Integer.parseInt(scanner.nextLine()); 
-			//layerTwo(menuChoice);
 
 			displayMenu(LECTURER);
 			break;
@@ -220,15 +220,6 @@ public class Menu {
 			break;
 		case 4:
 			//View Attendance
-			System.out.println("===   View Attendance   ===");
-
-			try {
-				Attendance att = new Attendance();
-				att.viewAttendance();
-				System.out.println("\n");
-			} 
-			catch (ClassNotFoundException e) {e.printStackTrace();}
-			catch (SQLException e) {e.printStackTrace();}
 
 			displayMenu(LECTURER);
 			break;
@@ -256,6 +247,62 @@ public class Menu {
 			}
 			catch (InputMismatchException ex) {
 				System.out.println("Invalid options!\n");
+			}
+
+			displayMenu(LECTURER);
+
+			break;
+		case 6:
+			//View Course
+			boolean flag = true;
+			while (flag) {
+				cc.viewCourse();
+				System.out
+				.println("Which course do you want to view. Key 0 to exit");
+				int course = s.nextInt();
+				if (course <= cc.getSize()) {
+					if (course == 0) {
+						flag = false;
+					} else {
+						cc.viewCourse(course);
+					}
+				} else {
+					System.out.println("Value out of bound");
+				}
+			}
+
+			displayMenu(LECTURER);
+
+			break;
+		case 7:
+			//Add Course
+			System.out.println("You have chosen to add a Course");
+			System.out.println("Enter the name of the Course");
+			String name = sc.nextLine();
+			System.out.println("Enter the course type");
+			String location = sc.nextLine();
+			cc.addCourse(name, location);
+
+			displayMenu(LECTURER);
+
+			break;
+		case 8:
+			//Mark Attendance
+			boolean flags = true;
+			while (flags) {
+				nc.viewAtt();
+				System.out
+				.println("Which attendance do you want to mark. Key 0 to exit");
+				int course = sc.nextInt();
+				if (course <= nc.getSize()) {
+					if (course == 0) {
+						flags = false;
+					} else {
+						nc.markAtt(course);
+					}
+				} else {
+					System.out.println("Value out of bound");
+				}
 			}
 
 			displayMenu(LECTURER);
@@ -306,6 +353,27 @@ public class Menu {
 			}
 			catch (InputMismatchException ex) {
 				System.out.println("Invalid options!\n");
+			}
+
+			displayMenu(TUTOR);
+			break;
+		case 4:
+			//View course
+			boolean flag = true;
+			while (flag) {
+				cc.viewCourse();
+				System.out
+				.println("Which course do you want to view. Key 0 to exit");
+				int course = s.nextInt();
+				if (course <= cc.getSize()) {
+					if (course == 0) {
+						flag = false;
+					} else {
+						cc.viewCourse(course);
+					}
+				} else {
+					System.out.println("Value out of bound");
+				}
 			}
 
 			displayMenu(TUTOR);
@@ -376,6 +444,13 @@ public class Menu {
 			menuRoom(getInputForMenu());
 
 			break;
+		case 6:
+			System.out.println("===   Manage Attendance   ===");
+			System.out.println("1.\tView Attendance");
+			System.out.println("2.\tCheck Attendance");
+			System.out.println("0.\tBack");
+
+			menuAttendance(getInputForMenu());
 		}
 	}
 
@@ -533,6 +608,42 @@ public class Menu {
 		default:
 			System.out.println("Invalid options!\n");
 			displaySubMenu(5);
+			break;
+		}
+	}
+
+	private void menuAttendance(int selection) {
+		switch (selection) {
+		case 0:
+			//Back
+			displayMenu(ADMIN);
+			break;
+		case 1:
+			//View Attendance
+			boolean flag = true;
+			while (flag) {
+				nc.viewAtt();
+				System.out
+				.println("Which attendance do you want to view. Key 0 to exit");
+				int course = s.nextInt();
+				if (course <= nc.getSize()) {
+					if (course == 0) {
+						flag = false;
+					} else {
+						nc.viewAtt(course);
+					}
+				} else {
+					System.out.println("Value out of bound");
+				}
+			}
+
+			displaySubMenu(6);
+			break;
+		case 2:
+			//Check Attendance
+			nc.checkAbs();
+
+			displaySubMenu(6);
 			break;
 		}
 	}

@@ -5,5 +5,5 @@ Bundle-SymbolicName: consortium.psd.Course
 Bundle-Version: 1.0.0
 Bundle-Vendor: University of Glasgow
 Bundle-Localization: plugin
-Import-Package: consortium.psd.UI, org.osgi.framework;version="1.3.0"
-Export-Package: consortium.psd.UI, consortium.psd.Course
+Import-Package: consortium.psd.UI,org.osgi.framework;version="1.3.0"
+Export-Package: consortium.psd.Course

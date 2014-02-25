@@ -1,0 +1,1 @@
+timetable_id,class_id,course_id,room_id,date,start_time,end_time,is_compulsory,require_tutor,lecturer_id,max_student,remarks1,1,1,1,22022014,900,1500,Y,,2,40,NIL2,1,2,1,23022014,900,1500,Y,,6,10,NIL3,2,3,2,25022014,900,1500,Y,4,10,30,NIL4,3,4,3,26022014,900,1500,N,8,2,60,NIL
