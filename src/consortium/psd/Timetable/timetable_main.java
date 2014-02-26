@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import consortium.psd.UI.Menu;
+
 public class timetable_main {
 	static Scanner sc = new Scanner(System.in);
 	static String u;
@@ -16,19 +18,19 @@ public class timetable_main {
 
 	public static void u_login() throws ClassNotFoundException, SQLException {
 		System.out
-				.println("1. Administrator\n2. Lecturer\n3. Tutor\n4. Student\n0. Exit");
+		.println("1. Administrator\n2. Lecturer\n3. Tutor\n4. Student\n0. Exit");
 		u = sc.nextLine();
 		if (u.equalsIgnoreCase("1")) {
 			role = "admin";
 			timetable_select_admin();
 		} else if (u.equalsIgnoreCase("2")) {
-
+			role = "lecturer";
 			timetable_select_other();
 		} else if (u.equalsIgnoreCase("3")) {
-
+			role = "tutor";
 			timetable_select_other();
 		} else if (u.equalsIgnoreCase("4")) {
-
+			role = "student";
 			timetable_select_other();
 		} else if (u.equalsIgnoreCase("0")) {
 			System.exit(0);
@@ -40,11 +42,11 @@ public class timetable_main {
 	}
 
 	public static void timetable_select_other() throws ClassNotFoundException,
-			SQLException {
+	SQLException {
 		System.out.println("1. View timetable\n0. Back");
 		u = sc.nextLine();
 		if (u.equalsIgnoreCase("1")) {
-			viewTimetable();
+			viewTimetable(Menu.STUDENT);
 		} else if (u.equalsIgnoreCase("0")) {
 			u_login();
 		} else {
@@ -54,9 +56,9 @@ public class timetable_main {
 	}
 
 	public static void timetable_select_admin() throws ClassNotFoundException,
-			SQLException {
+	SQLException {
 		System.out
-				.println("1. Add to timetable\n2. Delete from timetable\n3. Update timetable\n4. View timetable\n0. Back");
+		.println("1. Add to timetable\n2. Delete from timetable\n3. Update timetable\n4. View timetable\n0. Back");
 		u = sc.nextLine();
 		if (u.equalsIgnoreCase("1")) {
 			addToTimetable();
@@ -65,7 +67,7 @@ public class timetable_main {
 		} else if (u.equalsIgnoreCase("3")) {
 			updateTimetable();
 		} else if (u.equalsIgnoreCase("4")) {
-			viewTimetable();
+			viewTimetable(Menu.STUDENT);
 		} else if (u.equalsIgnoreCase("0")) {
 			u_login();
 		} else {
@@ -84,7 +86,7 @@ public class timetable_main {
 	}
 
 	public static void addToTimetable() throws SQLException,
-			ClassNotFoundException {
+	ClassNotFoundException {
 		do {
 			System.out.println("Class ID: ");
 			u = sc.nextLine();
@@ -147,7 +149,7 @@ public class timetable_main {
 
 		do {
 			System.out
-					.println("Require Tutor:(Insert tutor ID if available, NA if not available)");
+			.println("Require Tutor:(Insert tutor ID if available, NA if not available)");
 			u = sc.nextLine();
 
 			if (u.equalsIgnoreCase("NA")) {
@@ -189,7 +191,7 @@ public class timetable_main {
 	}
 
 	public static void deleteTimetable() throws SQLException,
-			ClassNotFoundException {
+	ClassNotFoundException {
 		do {
 			System.out.println("Timetable ID: ");
 			u = sc.nextLine();
@@ -209,7 +211,7 @@ public class timetable_main {
 	}
 
 	public static void updateTimetable() throws SQLException,
-			ClassNotFoundException {
+	ClassNotFoundException {
 		do {
 			System.out.println("Timetable ID: ");
 			u = sc.nextLine();
@@ -285,7 +287,7 @@ public class timetable_main {
 
 		do {
 			System.out
-					.println("Require Tutor:(Insert tutor ID if available, NA if not available)");
+			.println("Require Tutor:(Insert tutor ID if available, NA if not available)");
 			u = sc.nextLine();
 
 			if (u.equalsIgnoreCase("NA")) {
@@ -327,12 +329,17 @@ public class timetable_main {
 		//timetable_select_admin();
 	}
 
-	public static void viewTimetable() throws ClassNotFoundException,
-			SQLException {
+	public static void viewTimetable(int role) throws ClassNotFoundException,
+	SQLException {
 		user_id = 3;
-		mList = e.retriveTimetable(user_id);
+		if(role == Menu.ADMIN){
+			mList=e.retriveTimetable_admin();
+		}
+		else{
+			mList = e.retriveTimetable(user_id);
+		}
 		System.out
-				.println("\n==========================================================\n");
+		.println("\n==========================================================\n");
 		for (int i = 0; i < mList.size(); i++) {
 
 			System.out.println("Timetable ID: "
@@ -351,7 +358,7 @@ public class timetable_main {
 		}
 
 		System.out
-				.println("\n==========================================================\n");
+		.println("\n==========================================================\n");
 		System.out.println();
 		/*if (role.equalsIgnoreCase("admin")) {
 			timetable_select_admin();
@@ -361,7 +368,7 @@ public class timetable_main {
 	}
 
 	public static void main(String args[]) throws ClassNotFoundException,
-			SQLException {
+	SQLException {
 		u_login();
 	}
 

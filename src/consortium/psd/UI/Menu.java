@@ -14,10 +14,10 @@ import consortium.psd.Timetable.timetable_main;
 import consortium.psd.User.Login;
 
 public class Menu {
-	private static final int ADMIN = 0;
-	private static final int STUDENT = 1;
-	private static final int LECTURER = 2;
-	private static final int TUTOR = 3;
+	public static final int ADMIN = 0;
+	public static final int STUDENT = 1;
+	public static final int LECTURER = 2;
+	public static final int TUTOR = 3;
 	static CourseController cc = new CourseController();
 	static NRController nc = new NRController();
 
@@ -134,7 +134,7 @@ public class Menu {
 		case 1:
 			// View timetable
 			try {
-				timetable_main.viewTimetable();
+				timetable_main.viewTimetable(Menu.STUDENT);
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -225,7 +225,7 @@ public class Menu {
 		case 1:
 			// View timetable
 			try {
-				timetable_main.viewTimetable();
+				timetable_main.viewTimetable(Menu.LECTURER);
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -348,7 +348,7 @@ public class Menu {
 		case 1:
 			// View timetable
 			try {
-				timetable_main.viewTimetable();
+				timetable_main.viewTimetable(Menu.TUTOR);
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -537,7 +537,7 @@ public class Menu {
 		case 4:
 			//View Timetable
 			try {
-				timetable_main.viewTimetable();
+				timetable_main.viewTimetable(Menu.ADMIN);
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
