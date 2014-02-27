@@ -8,12 +8,14 @@ import java.util.ArrayList;
 
 public class RoomController {
 
+	
 	private ArrayList<Room> room = new ArrayList<Room>();
 
 	public RoomController() {
 		initData();
-		
+
 	}
+
 	
 	public void addRoom(String name, String location, int capacity) {
 		int id = room.size();
@@ -21,30 +23,40 @@ public class RoomController {
 		save();
 	}
 
+	
+	public Room getRoom(int id) {
+		for (Room rm : room) {
+			if (rm.getId() == id){
+				return rm;
+			}
+		}
+			return null;
+	}
+
 	public int getsize() {
 		return room.size();
 	}
-	
+
 	public void viewRoom() {
 		for (Room r : room) {
-			System.out.println((r.getId() + 1)+":\t"+r.getName());
+			System.out.println(r.getId() + ":\t" + r.getName());
 		}
 	}
-	
+
 	public void viewRoom(int id) {
 		for (Room r : room) {
 			if (r.getId() == id) {
-				System.out.println("Name:\t\t"+r.getName());
-				System.out.println("Location:\t\t"+r.getLocation());
-				System.out.println("Max Capacity:\t"+r.getCapacity());
+				System.out.println("Name:\t\t" + r.getName());
+				System.out.println("Location:\t\t" + r.getLocation());
+				System.out.println("Max Capacity:\t" + r.getCapacity());
 				System.out.println();
 				break;
 			}
 		}
 	}
-	
-	public void editRoom (int id, String name, String location, int capacity) {
-		for (Room r : room)  {
+
+	public void editRoom(int id, String name, String location, int capacity) {
+		for (Room r : room) {
 			if (r.getId() == id) {
 				r.setName(name);
 				r.setLocation(location);
@@ -54,8 +66,8 @@ public class RoomController {
 		}
 		save();
 	}
-	
-	public void delRoom (int id) {
+
+	public void delRoom(int id) {
 		for (Room r : room) {
 			if (r.getId() == id) {
 				room.remove(r);
@@ -64,25 +76,28 @@ public class RoomController {
 		}
 		save();
 	}
-	
+
 	public void save() {
-		String url = "room.csv";
+		
+		String url = "Database/room.csv";
 		try {
+
 			FileWriter writer = new FileWriter(url);
-			
+
 			for (Room r : room) {
-				writer.append(r.getId() +","+ r.getName()+","+r.getLocation()+","+r.getCapacity());
+				writer.append(r.getId() + "," + r.getName() + ","
+						+ r.getLocation() + "," + r.getCapacity());
 				writer.append("\n");
 			}
-			
+
 			writer.flush();
 			writer.close();
-			
+
 		} catch (IOException e) {
 			System.err.println("Unable to save");
 		}
 	}
-	
+
 	
 	public void initData() {
 		BufferedReader br = null;
@@ -90,7 +105,7 @@ public class RoomController {
 			String sCurrentLine;
 			br = new BufferedReader(
 					new FileReader(
-							"room.csv"));
+							"Database/room.csv"));
 			while ((sCurrentLine = br.readLine()) != null) {
 				String[] temp = sCurrentLine.split(",");
 				if (isInteger(temp[3]) && isInteger(temp[0])) {

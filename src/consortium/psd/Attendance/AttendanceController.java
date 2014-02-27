@@ -11,7 +11,7 @@ import java.util.Scanner;
 import consortium.psd.UI.Attendance;
 import consortium.psd.UI.Student;
 
-public class NRController {
+public class AttendanceController {
 
 	ClassController cc = new ClassController();
 	StudentController sc = new StudentController();
@@ -19,7 +19,7 @@ public class NRController {
 	ArrayList<Attendance> a = new ArrayList<Attendance>();
 	Scanner scan = new Scanner(System.in);
 
-	public NRController() {
+	public AttendanceController() {
 		initData();
 	}
 	

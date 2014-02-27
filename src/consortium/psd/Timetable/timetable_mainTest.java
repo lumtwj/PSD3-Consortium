@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import org.junit.Test;
 
+import consortium.psd.Course.CourseController;
 import consortium.psd.UI.Menu;
 
 public class timetable_mainTest {
@@ -35,5 +36,14 @@ public class timetable_mainTest {
 		}
 	}
 
-
+	@Test
+	public void testViewCourse() {
+		try {
+			CourseController cc = new CourseController();
+			cc.viewCourse();
+			// assertTrue(true);
+		} catch (Exception ex) {
+			fail(ex.getMessage());
+		}
+	}
 }

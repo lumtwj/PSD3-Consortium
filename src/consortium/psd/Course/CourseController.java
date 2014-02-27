@@ -1,6 +1,5 @@
 package consortium.psd.Course;
 
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -50,7 +49,7 @@ public class CourseController {
 			FileWriter writer = new FileWriter(url);
 
 			for (Course p : c) {
-				writer.append(p.getId() + "," + p.getName() +","+ p.getType());
+				writer.append(p.getId() + "," + p.getName() + "," + p.getType());
 				writer.append("\n");
 			}
 
@@ -72,6 +71,17 @@ public class CourseController {
 	public int getSize() {
 		return c.size();
 	}
+	
+	public int courseID (String name) {
+		
+		for (Course p : c) {
+			if (p.getName().equals(name)) {
+				return p.getId();
+			}
+		}
+		
+		return 0;
+	}
 
 	public Course getCourse(int id) {
 		for (Course p : c) {
@@ -92,6 +102,41 @@ public class CourseController {
 				System.out.println("======================================");
 			}
 		}
+	}
+
+	public boolean importData(String url) {
+		BufferedReader br = null;
+		try {
+
+			/*
+			 * Reading all the classes
+			 */
+			String sCurrentLine;
+			br = new BufferedReader(new FileReader(url));
+			while ((sCurrentLine = br.readLine()) != null) {
+				String[] temp = sCurrentLine.split(",");
+				if (isInteger(temp[0])) {
+					c.add(new Course(Integer.parseInt(temp[0]), temp[1],
+							temp[2]));
+				}
+
+			}
+
+		} catch (IOException e) {
+			System.err
+					.println("Wrong path name, please try again.");
+			return false;
+		} finally {
+			try {
+				if (br != null)
+					br.close();
+			} catch (IOException ex) {
+				System.err.println("Unable to do process");
+				return false;
+			}
+		}
+		
+		return true; 
 	}
 
 	public void initData() {
@@ -116,7 +161,7 @@ public class CourseController {
 
 		} catch (IOException e) {
 			System.err
-			.println("Unable to establish connection with the database. Please exit the the system and try again later.");
+					.println("Unable to establish connection with the database. Please exit the the system and try again later.");
 		} finally {
 			try {
 				if (br != null)
