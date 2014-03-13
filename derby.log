@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Mon Mar 03 15:33:03 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
+Thu Mar 13 16:30:31 SGT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0144-ba90-6d38-000006a36f20 
+on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortiumDB with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
 Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.7.0_45-b18
@@ -12,12 +12,12 @@ os.version=10.9.2
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Mon Mar 03 15:33:04 SGT 2014:
-Shutting down instance a816c00e-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
+Thu Mar 13 16:30:31 SGT 2014:
+Shutting down instance a816c00e-0144-ba90-6d38-000006a36f20 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortiumDB with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
 ----------------------------------------------------------------
-Mon Mar 03 15:33:04 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance fb160050-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
+Thu Mar 13 16:30:31 SGT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 08264012-0144-ba90-6d38-000006a36f20 
+on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortiumDB with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
 Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.7.0_45-b18
@@ -28,165 +28,5 @@ os.version=10.9.2
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Mon Mar 03 15:33:04 SGT 2014:
-Shutting down instance fb160050-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-----------------------------------------------------------------
-Mon Mar 03 15:33:04 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 12564092-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.2
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Mar 03 15:33:04 SGT 2014:
-Shutting down instance 12564092-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-----------------------------------------------------------------
-Mon Mar 03 15:33:04 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 6dd780d4-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.2
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Mar 03 15:33:04 SGT 2014:
-Shutting down instance 6dd780d4-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-----------------------------------------------------------------
-Mon Mar 03 15:33:04 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 8d99c116-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.2
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Shutting down instance 8d99c116-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance f19d0158-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.2
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Shutting down instance f19d0158-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 19e1419a-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.2
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Shutting down instance 19e1419a-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 866681dc-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.2
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Shutting down instance 866681dc-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance b72cc21e-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.2
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Shutting down instance b72cc21e-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 2c340260-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.2
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Shutting down instance 2c340260-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 657c42a2-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.2
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Shutting down instance 657c42a2-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance e30582e4-0144-86dc-391d-000006a51888 
-on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
-Loaded from file:/Users/lumtwj/Desktop/PSD3%20Assignment/PSD3_Consortium_Source/lib/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=/Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.2
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Mar 03 15:33:05 SGT 2014:
-Shutting down instance e30582e4-0144-86dc-391d-000006a51888 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortium with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
+Thu Mar 13 16:30:32 SGT 2014:
+Shutting down instance 08264012-0144-ba90-6d38-000006a36f20 on database directory /Users/lumtwj/Desktop/PSD3 Assignment/PSD3_Consortium_Source/consortiumDB with class loader sun.misc.Launcher$AppClassLoader@44f757b9 

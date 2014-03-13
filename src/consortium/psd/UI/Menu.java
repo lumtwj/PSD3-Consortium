@@ -8,6 +8,7 @@ import java.util.Scanner;
 import consortium.psd.Attendance.AttendanceController;
 import consortium.psd.Course.CourseController;
 import consortium.psd.Room.RoomController;
+import consortium.psd.Timetable.TimetableController;
 import consortium.psd.Timetable.module;
 import consortium.psd.Timetable.timetable_entity;
 import consortium.psd.Timetable.timetable_main;
@@ -462,6 +463,7 @@ public class Menu {
 			System.out.println("2.\tEdit Slot of Timetable");
 			System.out.println("3.\tDelete Slot of Timetable");
 			System.out.println("4.\tView Timetable");
+			System.out.println("5.\tCheck for clashes");
 			System.out.println("0.\tBack");
 
 			menuTimetable(getInputForMenu());
@@ -645,6 +647,11 @@ public class Menu {
 				e.printStackTrace();
 			}
 
+			displaySubMenu(1);
+			break;
+		case 5:
+			new TimetableController().checkClash();
+			
 			displaySubMenu(1);
 			break;
 		}

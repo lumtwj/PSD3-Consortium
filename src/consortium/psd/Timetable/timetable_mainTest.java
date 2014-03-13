@@ -46,4 +46,14 @@ public class timetable_mainTest {
 			fail(ex.getMessage());
 		}
 	}
+
+	@Test
+	public void testClashCourse() {
+		try {
+			TimetableController tc = new TimetableController();
+			tc.checkClash();
+		} catch (Exception ex) {
+			fail(ex.getMessage());
+		}
+	}
 }
